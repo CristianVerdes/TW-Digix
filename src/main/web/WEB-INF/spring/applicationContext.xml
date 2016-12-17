@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Account Services -->
+    <bean id="logInService" name="logInService" class="com.digix.mvc.model.services.account.LogInService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="registerService" class="com.digix.mvc.model.services.account.RegisterService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="logOutService" class="com.digix.mvc.model.services.account.LogOutService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- Home Services -->
+    <bean name="providerService" class="com.digix.mvc.model.services.home.social.ProviderService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="profileService" class="com.digix.mvc.model.services.home.ProfileService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="contentService" class="com.digix.mvc.model.services.home.ContentService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="searchService" class="com.digix.mvc.model.services.home.SearchService">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="contentService" ref="contentService"/>
+    </bean>
+    <bean name="newsFeedService" class="com.digix.mvc.model.services.home.NewsFeedService">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="contentService" ref="contentService"/>
+    </bean>
+    <bean name="socialService" class="com.digix.mvc.model.services.SocialService" >
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- API Services -->
+    <bean name="apiService" class="com.digix.mvc.model.services.api.ApiService">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean name="apiContentService" class="com.digix.mvc.model.services.api.ApiContentService">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="contentService" ref="contentService"/>
+        <property name="apiService" ref="apiService"/>
+    </bean>
+    <bean name="apiPhotoService" class="com.digix.mvc.model.services.api.ApiPhotoService">
+        <property name="contentService" ref="contentService"/>
+        <property name="apiService" ref="apiService"/>
+    </bean>
+
+</beans>
