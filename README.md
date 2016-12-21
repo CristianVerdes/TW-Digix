@@ -5,6 +5,6 @@ The idea is that you can store anything that has sentimental value to you in one
 "Videos with my grandma in 2016", "Pictures with my friend Andrei", "Pictures when I was in highschool" and so on.
 
 ## Authors
-Cristian Verdes
-Andrei Mihaes
-Daniel Moniry
+- Cristian Verdes
+- Andrei Mihaes
+- Daniel Moniry
